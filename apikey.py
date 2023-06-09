@@ -1,1 +1,1 @@
-api_key = 'YOUR API KEY'
+api_key = 'REPLACE WITH YOUR API KEY'
