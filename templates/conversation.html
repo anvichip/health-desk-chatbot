@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Condition Helpdesk</title>
+</head>
+<body>
+    <h1>Health Condition Helpdesk</h1>
+    <div id="chatbox">
+        {% for entry in chat_history %}
+            {% if entry['user'] %}
+                <p><strong>User:</strong> {{ entry['user'] }}</p>
+            {% endif %}
+            {% if entry['bot'] %}
+                <p><strong>Bot:</strong> {{ entry['bot'] }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="container">
+        <form action="/chat" method="post">
+            <input type="text" name="message" id="message" placeholder="Ask me anything">
+            <input type="submit" value="Submit">
+        </form>
+        <!-- Add the button within your HTML template -->
+        <a href="{{ url_for('home') }}" class="btn">New Chat</a>
+    </div>/
+</body>
+</html>

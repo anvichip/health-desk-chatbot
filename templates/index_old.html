@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+</head>
+<body>
+    <div id="chatbox">
+        {% for entry in chat_history %}
+            {% if entry['user'] %}
+                <p><strong>User:</strong> {{ entry['user'] }}</p>
+            {% endif %}
+            {% if entry['bot'] %}
+                <p><strong>Bot:</strong> {{ entry['bot'] }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <form action="/submit" method="post">
+        <input type="text" name="user_input" id="user_input">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
